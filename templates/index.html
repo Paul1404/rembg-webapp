@@ -4,29 +4,57 @@
     <title>✂️ rmbg</title>
     <style>
       body {
-        height: 100vh;
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-
-      .drop-zone {
-        border: 2px dashed #ccc;
-        padding: 20px;
-        width: 80vw;
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-
-      .drop-zone.dragover {
-        background-color: #f0f0f0;
-      }
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #f8f9fa; /* Light grey background */
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    .drop-zone {
+      border: 2px dashed #007bff; /* Bright blue border */
+      border-radius: 10px; /* Rounded corners */
+      padding: 20px;
+      width: 80vw;
+      max-width: 600px; /* Max width for larger screens */
+      height: 80vh;
+      max-height: 400px; /* Max height for larger screens */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+    
+    .drop-zone.dragover {
+      background-color: #e2e6ea; /* Slightly darker grey */
+      border-color: #0056b3; /* Darker blue */
+    }
+    
+    .drop-zone h1 {
+      color: #007bff; /* Bright blue to match the theme */
+      margin-bottom: 20px;
+    }
+    
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
     </style>
   </head>
   <body>
