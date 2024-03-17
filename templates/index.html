@@ -3,58 +3,75 @@
   <head>
     <title>✂️ rmbg</title>
     <style>
-      body {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background-color: #f8f9fa; /* Light grey background */
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-    }
-    
-    .drop-zone {
-      border: 2px dashed #007bff; /* Bright blue border */
-      border-radius: 10px; /* Rounded corners */
-      padding: 20px;
-      width: 80vw;
-      max-width: 600px; /* Max width for larger screens */
-      height: 80vh;
-      max-height: 400px; /* Max height for larger screens */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    }
-    
-    .drop-zone.dragover {
-      background-color: #e2e6ea; /* Slightly darker grey */
-      border-color: #0056b3; /* Darker blue */
-    }
-    
-    .drop-zone h1 {
-      color: #007bff; /* Bright blue to match the theme */
-      margin-bottom: 20px;
-    }
-    
-    input[type="submit"] {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.2s;
-    }
-    
-    input[type="submit"]:hover {
-      background-color: #0056b3; /* Darker blue on hover */
-    }
+      :root {
+            --primary-color: #007bff;
+            --hover-primary-color: #0056b3;
+            --background-color: #f8f9fa;
+            --drop-zone-border-color: #007bff;
+            --drop-zone-background: #e2e6ea;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--background-color);
+            margin: 0;
+            font-family: var(--font-family);
+        }
+
+        .drop-zone {
+            border: 2px dashed var(--drop-zone-border-color);
+            border-radius: 10px;
+            padding: 20px;
+            width: 80vw;
+            max-width: 600px;
+            height: 80vh;
+            max-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .drop-zone.dragover {
+            background-color: var(--drop-zone-background);
+            border-color: var(--hover-primary-color);
+        }
+
+        .drop-zone h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="submit"] {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: var(--hover-primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .drop-zone {
+                width: 90vw;
+                height: 60vh;
+            }
+        }
     </style>
   </head>
   <body>
