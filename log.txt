@@ -1,0 +1,8 @@
+2024-07-22 02:05:28 Starting server...
+2024-07-22 02:05:28 Host set to 0.0.0.0
+2024-07-22 02:05:28 Port set to 5100
+2024-07-22 02:05:28 Running on http://0.0.0.0:5100 (Press CTRL+C to quit)
+2024-07-22 02:05:28 Starting server...
+2024-07-22 02:05:28 Host set to 0.0.0.0
+2024-07-22 02:05:28 Port set to 5100
+2024-07-22 02:05:28 Running on http://0.0.0.0:5100 (Press CTRL+C to quit)

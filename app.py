@@ -4,9 +4,21 @@ from rembg import remove
 from PIL import Image, UnidentifiedImageError
 from io import BytesIO
 import os
+import random
+import time
+
+def logger(message):
+    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {message}")  # Print the current time and the message
+    save_log(message)  # Save the message to a log file
+    
+def save_log(message):
+    with open('log.txt', 'a') as f:
+        f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {message}\n")
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Necessary for flash messages
+def generate_secret_key():
+    return os.urandom(24)
+app.secret_key = generate_secret_key()  # Necessary for flash messages
 
 # Configure these variables
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 MB limit
@@ -43,8 +55,11 @@ def upload_file():
 
 
 if __name__ == '__main__':
+    logger("Starting server...")
     host = '0.0.0.0'
+    logger(f"Host set to {host}")
     port = 5100
+    logger(f"Port set to {port}")
     url = f"http://{host}:{port}"
-    print(f"Running on {url} (Press CTRL+C to quit)")
+    logger(f"Running on {url} (Press CTRL+C to quit)")
     app.run(host=host, port=port, debug=True)
